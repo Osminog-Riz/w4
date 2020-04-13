@@ -147,7 +147,7 @@ else {
     $powers_string = implode(', ', $powers_bd);
 
     try {
-        $db = new PDO('mysql:host=localhost;dbname=u1635', $db_user, $db_password, array(PDO::ATTR_PERSISTENT => true));
+        $db = new PDO('mysql:host=localhost;dbname=u16355', $db_user, $db_password, array(PDO::ATTR_PERSISTENT => true));
         $statement = $db->prepare("INSERT INTO ".$db_table." (name, email, age, sex, limbs, powers, bio) VALUES ('$name','$email',$age,'$sex',$limbs,'$powers_string','$bio')");
         $statement = $db->prepare('INSERT INTO '.$db_table.' (name, email, age, sex, limbs, powers, bio) VALUES (:name, :email, :age, :sex, :limbs, :powers, :bio)');
         $statement->execute([
